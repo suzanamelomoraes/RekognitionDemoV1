@@ -13,7 +13,7 @@ As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekogn
 
 **Example**
 
-![Machine gun](https://www.middleeasteye.net/sites/default/files/styles/article_page/public/images-story/Turkey-canik-M2-machine-gun.jpeg.webp?itok=1AIX-WS-)
+![Machine gun](https://www.middleeasteye.net/sites/default/files/styles/max_2600x2600/public/images-story/Turkey-canik-M2-machine-gun.jpeg?itok=zidQMsXh)
 
 ````bash
     moderationLabels [
@@ -33,23 +33,6 @@ As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekogn
     ```
 
 
-
-```bash
-    moderationLabels [
-      {
-        Confidence: 99.96949768066406,
-        Name: 'Weapons',
-        ParentName: 'Violence',
-        TaxonomyLevel: 2
-      },
-      {
-        Confidence: 99.96949768066406,
-        Name: 'Violence',
-        ParentName: '',
-        TaxonomyLevel: 1
-      }
-    ]
-    ```
 ---
 
 ### Getting Started with Next.js
