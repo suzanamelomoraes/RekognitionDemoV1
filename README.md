@@ -13,7 +13,7 @@ As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekogn
 
 **Example**
 
-![Machine gun](https://www.middleeasteye.net/sites/default/files/styles/max_2600x2600/public/images-story/Turkey-canik-M2-machine-gun.jpeg?itok=zidQMsXh)
+![machinegun](public/machinegun.jpeg)
 
 ````bash
     moderationLabels [
