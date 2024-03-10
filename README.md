@@ -11,12 +11,16 @@ As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekogn
 - The image must be in either a .jpg or a .png format.
 - You can provide the input image as an image byte array (base64-encoded image bytes), or specify an Amazon S3 object.
 
-**Example**
+### Example
+
+**Image**
 
 ![machinegun](public/machinegun.jpeg)
 
-````bash
-    moderationLabels [
+**Response:**
+
+```bash
+ moderationLabels: [
       {
         Confidence: 99.96949768066406,
         Name: 'Weapons',
@@ -30,8 +34,7 @@ As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekogn
         TaxonomyLevel: 1
       }
     ]
-    ```
-
+```
 
 ---
 
@@ -47,7 +50,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-````
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
