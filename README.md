@@ -1,6 +1,6 @@
 # Rekognition demo
 
-This is a simple demo of Amazon Rekognition service. It uses Next.js to create a simple web app that calls Amazon Rekognition [Moderating content](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) tool to moderate image content and get the labels of the moderated images.
+This is a simple demo of Amazon Rekognition service. It uses Next.js to create a simple application that calls Amazon Rekognition [Moderating content](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) tool to moderate image content and get the labels of the moderated images.
 
 > [Amazon Rekognition](https://docs.aws.amazon.com/rekognition) is a cloud-based image and video analysis service that makes it easy to add advanced computer vision capabilities to your applications. The service is powered by proven deep learning technology and it requires no machine learning expertise to use.
 
