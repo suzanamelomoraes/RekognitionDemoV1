@@ -36,7 +36,7 @@ function getParams(input: { imageBytes: Buffer }) {
   return params;
 }
 
-// send content image to AWS Rekognition
+// send image content to AWS Rekognition for image analysis
 async function moderateContentImage(
   params: DetectModerationLabelsCommandInput
 ): Promise<DetectModerationLabelsCommandOutput> {
