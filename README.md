@@ -7,8 +7,10 @@ This is a simple demo of Amazon Rekognition service. It uses Next.js to create a
 ## Key Features
 
 Amazon Rekognition includes a simple, easy-to-use API that can quickly analyze any image or video file that’s stored in Amazon S3.
-Developers can add features in their applications that detect objects, text, unsafe content, analyze images/videos, and compare faces to your application using Rekognition's APIs.
-For this project the focus is on the image analysis ans our first feature is to detect inappropriate content in an image, but there many other features that can be used to analyze images:
+
+Developers can add features in their applications that detect objects, text, and unsafe content, analyze images/videos, and compare faces to your application using Rekognition's APIs.
+
+For this project, the focus is on image analysis, and our first feature is to detect inappropriate content in an image, but there are many other features that can be used to analyze images:
 
 - **Object, Scene, and Concept Detection** - Detects and classify objects, scenes, concepts, and celebrities in images.
 - **Text Detection** - Detect and recognize printed and handwritten text in images in a variety of languages.
