@@ -24,10 +24,29 @@ For this project, the focus is on image analysis, and our first feature is to de
 
 As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html), you can use the [DetectModerationLabels](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectModerationLabels.html) operation to determine if an image contains inappropriate or offensive content.
 
-- The image must be in either a .jpg or a .png format.
-- You can provide the input image as an image byte array (base64-encoded image bytes), or specify an Amazon S3 object.
+- The image must be in either a .jpg or a .png format
+- You can provide the input image as an image byte array or specify an Amazon S3 object
+- You need to have the AWS CLI or the appropriate AWS SDK installed
+- You need to create or update an user with `AmazonRekognitionFullAccess` and `AmazonS3ReadOnlyAccess` permissions.
 
-### Example
+### DetectModerationLabels operation request
+
+The input to `DetectModerationLabel` is an image. It can retrieve input images from an S3 bucket, or you can provide them as image bytes (base64-encoded image bytes).
+
+`MinConfidence` is the minimum confidence that Amazon Rekognition Image must have in the accuracy of the detected label for it to be returned in the response.
+
+If you don't specify `MinConfidence`, the operation returns labels with confidence values greater than or equal to 50%.
+
+```typescript
+const params = {
+  Image: {
+    Bytes: imageBytes,
+  },
+  MinConfidence: 50,
+};
+```
+
+### DetectModerationLabels operation response
 
 **Image**
 
