@@ -29,6 +29,7 @@ function getParams(input: { imageBytes: Buffer }) {
       Image: {
         Bytes: input.imageBytes,
       },
+      MinConfidence: 70,
     };
   } else {
     throw new Error("No imageBytes in input");
