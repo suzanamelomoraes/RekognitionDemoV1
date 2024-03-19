@@ -7,6 +7,10 @@ import {
 
 import { getConfig } from "../../utils/config";
 
+type ParamsInput =
+  | { s3BucketName: string; filePath: string }
+  | { imageBytes: Buffer };
+
 // get the AWS Rekognition client
 async function getClient() {
   const config = getConfig();
@@ -22,9 +26,19 @@ async function getClient() {
 }
 
 // get the parameters for the content image
-function getParams(input: { imageBytes: Buffer }) {
+function getParams(input: ParamsInput) {
   let params: DetectModerationLabelsCommandInput;
-  if ("imageBytes" in input) {
+  if ("s3BucketName" in input && "filePath" in input) {
+    params = {
+      Image: {
+        S3Object: {
+          Bucket: input.s3BucketName,
+          Name: input.filePath,
+        },
+      },
+      MinConfidence: 70,
+    };
+  } else if ("imageBytes" in input) {
     params = {
       Image: {
         Bytes: input.imageBytes,
@@ -32,7 +46,9 @@ function getParams(input: { imageBytes: Buffer }) {
       MinConfidence: 70,
     };
   } else {
-    throw new Error("No imageBytes in input");
+    throw new Error(
+      "A valid input is required. Please provide a valid imageBytes or s3BucketName and filePath."
+    );
   }
   return params;
 }
@@ -47,7 +63,7 @@ async function moderateContentImage(
   return response;
 }
 
-export async function getModerationContent(input: { imageBytes: Buffer }) {
+export async function getModerationLabels(input: ParamsInput) {
   try {
     const params = getParams(input);
     const response = await moderateContentImage(params);
