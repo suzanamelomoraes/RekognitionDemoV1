@@ -33,9 +33,17 @@ As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekogn
 
 The input to `DetectModerationLabel` is an image. It can retrieve input images from an S3 bucket, or you can provide them as image bytes (base64-encoded image bytes).
 
-`MinConfidence` is the minimum confidence that Amazon Rekognition Image must have in the accuracy of the detected label for it to be returned in the response.
-
-If you don't specify `MinConfidence`, the operation returns labels with confidence values greater than or equal to 50%.
+```typescript
+params = {
+  Image: {
+    S3Object: {
+      Bucket: input.s3BucketName,
+      Name: input.filePath,
+    },
+  },
+  MinConfidence: 70,
+};
+```
 
 ```typescript
 const params = {
@@ -45,6 +53,10 @@ const params = {
   MinConfidence: 50,
 };
 ```
+
+`MinConfidence` is the minimum confidence that Amazon Rekognition Image must have in the accuracy of the detected label for it to be returned in the response.
+
+If you don't specify `MinConfidence`, the operation returns labels with confidence values greater than or equal to 50%.
 
 ### DetectModerationLabels operation response
 
