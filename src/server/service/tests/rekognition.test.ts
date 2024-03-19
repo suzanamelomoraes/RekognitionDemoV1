@@ -30,4 +30,11 @@ describe("RekognitionService", () => {
     });
     expect(result).toBeDefined();
   });
+  it("should moderate a cats image from an s3 bucket", async () => {
+    const result = await getModerationLabels({
+      s3BucketName: awsConfig.s3BucketName as string,
+      filePath: "cats.jpeg",
+    });
+    expect(result).toBeDefined();
+  });
 });
