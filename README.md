@@ -33,8 +33,10 @@ As per the [Amazon Rekognition documentation](https://docs.aws.amazon.com/rekogn
 
 The input to `DetectModerationLabel` is an image. It can retrieve input images from an S3 bucket, or you can provide them as image bytes (base64-encoded image bytes).
 
+**S3 buckets**
+
 ```typescript
-params = {
+const params = {
   Image: {
     S3Object: {
       Bucket: input.s3BucketName,
@@ -44,6 +46,8 @@ params = {
   MinConfidence: 70,
 };
 ```
+
+**Image bytes**
 
 ```typescript
 const params = {
